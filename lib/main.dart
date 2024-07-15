@@ -98,20 +98,17 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Map<String, dynamic>> items = [
     {
       'title': 'Title 1',
-      'image':
-          'https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp',
+      'image': 'assets/img1.png',
       'description': 'Description 1',
     },
     {
       'title': 'Title 2',
-      'image':
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuWXzkIYkMaVY24lJLPWFRS3WKI3kB3Ls0bg&s',
+      'image': 'assets/img2.png',
       'description': 'Description 2',
     },
     {
       'title': 'Title 3',
-      'image':
-          'https://d3phaj0sisr2ct.cloudfront.net/site/images/tools/thumbnails/reviewed/upscale+image.png',
+      'image': 'assets/img3.png',
       'description': 'Description 3',
     },
   ];
@@ -145,11 +142,11 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             alignment: Alignment.center,
             child: Text(
-              "Jumlah Counter: ${counter}",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              "Jumlah Counter: $counter",
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ),
           Expanded(
@@ -168,7 +165,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                   child: ListTile(
-                    leading: Image.network(items[index]['image']),
+                    leading: Image.asset(items[index]['image']),
                     title: Text(items[index]['title']),
                     subtitle: Text(items[index]['description']),
                   ),
@@ -211,11 +208,11 @@ class _DetailPageState extends State<DetailPage> {
             SizedBox(
               height: 200, 
               width: 200,  
-              child: Image.network(widget.data['image'], fit: BoxFit.cover), // Gunakan BoxFit.cover agar gambar menutupi seluruh SizedBox
+              child: Image.asset(widget.data['image'], fit: BoxFit.cover), // Gunakan BoxFit.cover agar gambar menutupi seluruh SizedBox
             ), 
             Text(
               widget.title,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -230,7 +227,7 @@ class _DetailPageState extends State<DetailPage> {
                 widget.stateFun();
                 Navigator.pop(context);
               }, 
-              child: Text('Add'),
+              child: const Text('Add'),
             ),
           ],
         ),
